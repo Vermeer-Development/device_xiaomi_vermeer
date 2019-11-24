@@ -260,6 +260,7 @@ endif
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayVermeer \
     FrameworkResOverlayVermeer \
+    LineageSDKOverlayVermeer \
     SystemUIOverlayVermeer \
     SettingsOverlayVermeer \
     TelephonyOverlayVermeer
