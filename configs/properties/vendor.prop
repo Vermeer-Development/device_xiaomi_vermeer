@@ -192,6 +192,9 @@ dalvik.vm.heapminfree=8m
 dalvik.vm.heapmaxfree=32m
 persist.sys.dalvik.vm.lib.2=libart.so
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 vendor.display.disable_scaler=0
 vendor.display.disable_excl_rect=0
