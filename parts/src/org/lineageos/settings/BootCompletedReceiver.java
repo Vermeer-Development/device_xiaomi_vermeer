@@ -37,6 +37,7 @@ import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.thermal.ThermalTileService;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
+import org.lineageos.settings.touchsampling.TouchSamplingService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -90,6 +91,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         // Start Refresh Rate Service
         RefreshUtils.startService(context);
 
+        // Start Touch Sampling Service
+        context.startServiceAsUser(new Intent(context, TouchSamplingService.class),
+                UserHandle.CURRENT);
     }
 
     private void overrideHdrTypes(Context context) {
