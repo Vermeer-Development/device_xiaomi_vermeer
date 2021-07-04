@@ -36,6 +36,7 @@
 
 # Touchscreen
 /sys/devices/platform/goodix_ts.0(/.*)? u:object_r:sysfs_goodix_touch:s0
+/sys/devices/platform/goodix_ts.0/switch_report_rate u:object_r:sysfs_htsr:s0
 
 # Touchfeature
 /dev/miev                                                   u:object_r:miev_device:s0
