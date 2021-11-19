@@ -283,6 +283,7 @@ debug.c2.use_dmabufheaps=1
 ro.mediaserver.64b.enable=true
 vendor.mm.enable.qcom_parser=16777215
 media.settings.xml=/odm/etc/media_profiles_kalama.xml
+persist.mm.enable.prefetch=true
 
 # OEM unlock
 ro.oem_unlock_supported=1
