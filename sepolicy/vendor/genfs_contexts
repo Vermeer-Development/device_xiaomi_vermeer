@@ -1,6 +1,9 @@
 # Camera
 genfscon sysfs "/csiphy_umd_paras/csiphy_umd_paras" u:object_r:sysfs_csiphy_umd_paras:s0
 
+# Display param
+genfscon sysfs /devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param   u:object_r:sysfs_disp_param:s0
+
 # Fingerprint
 genfscon sysfs "/devices/platform/soc/soc:fingerprint_goodix/wakeup" u:object_r:sysfs_wakeup:s0
 

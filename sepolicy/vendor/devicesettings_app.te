@@ -1,3 +1,6 @@
+allow devicesettings_app vendor_sysfs_displayfeature:dir { search read open getattr };
+allow devicesettings_app vendor_sysfs_displayfeature:file { read open getattr };
+
 allow devicesettings_app vendor_sysfs_graphics:dir search;
 allow devicesettings_app vendor_sysfs_graphics:file rw_file_perms;
 

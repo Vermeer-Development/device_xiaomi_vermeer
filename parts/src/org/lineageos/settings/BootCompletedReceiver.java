@@ -22,16 +22,20 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.database.ContentObserver;
 import android.hardware.display.DisplayManager;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
+import androidx.preference.PreferenceManager;
 
+import org.lineageos.settings.utils.FileUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.thermal.ThermalTileService;
 import org.lineageos.settings.refreshrate.RefreshUtils;
@@ -39,9 +43,15 @@ import org.lineageos.settings.refreshrate.RefreshUtils;
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
     private static final String TAG = "XiaomiParts";
+    private static final String DC_DIMMING_ENABLE_KEY = "dc_dimming_enable";
+    private static final String DC_DIMMING_NODE = "/sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param";
+
+    private SharedPreferences sharedPrefs;
 
     @Override
     public void onReceive(final Context context, Intent intent) {
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+
         if (DEBUG) Log.i(TAG, "Received intent: " + intent.getAction());
         switch (intent.getAction()) {
             case Intent.ACTION_LOCKED_BOOT_COMPLETED:
@@ -73,6 +83,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     private void startServices(Context context) {
         if (DEBUG) Log.i(TAG, "Starting services...");
+
+        // DC Dimming
+        boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
+        FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "08 01" : "08 00");
 
         // Start Thermal Management Services
         ThermalUtils.getInstance(context).startService();
