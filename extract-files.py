@@ -137,6 +137,8 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/etc/media_codecs_kalama.xml',
      'vendor/etc/media_codecs_kalama_vendor.xml') : blob_fixup()
         .regex_replace('.+media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).+\n', ''),
+    'vendor/etc/ueventd.rc' : blob_fixup()
+        .add_line_if_missing('\n# Charger\n/sys/class/qcom-battery     input_suspend            0660    system  system')
 }  # fmt: skip
 
 module = ExtractUtilsModule(
