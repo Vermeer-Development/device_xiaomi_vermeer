@@ -50,6 +50,10 @@ on property:ro.vendor.sensors.xiaomi.double_tap=true
 on property:ro.vendor.sensors.xiaomi.udfps=true
     write /sys/class/touch/touch_dev/fod_longpress_gesture_enabled 1
 
+on property:vendor.post_boot.parsed=1
+    # Set default thermal profile
+    write /sys/class/thermal/thermal_message/sconfig 0
+
 service touch_report /odm/bin/touch_report
     disabled
     override
