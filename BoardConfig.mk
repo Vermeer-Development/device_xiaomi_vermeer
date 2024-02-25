@@ -76,6 +76,10 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 # Hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_vermeer
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_vermeer
+
 # Kernel
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
