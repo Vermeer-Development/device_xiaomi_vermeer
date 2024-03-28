@@ -7,12 +7,3 @@ ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/kiwi
 $(TARGET_OUT_VENDOR)/firmware/wlanmdsp.otaupdate: $(LOCAL_INSTALLED_MODULE)
 $(call symlink-file,,/data/vendor/firmware/wlanmdsp.mbn,$(TARGET_OUT_VENDOR)/firmware/wlanmdsp.otaupdate)
 ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_OUT_VENDOR)/firmware/wlanmdsp.otaupdate
-$(TARGET_OUT_VENDOR)/lib64/libEGL_adreno.so: $(LOCAL_INSTALLED_MODULE)
-$(call symlink-file,,egl/libEGL_adreno.so,$(TARGET_OUT_VENDOR)/lib64/libEGL_adreno.so)
-ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_OUT_VENDOR)/lib64/libEGL_adreno.so
-$(TARGET_OUT_VENDOR)/lib64/libGLESv2_adreno.so: $(LOCAL_INSTALLED_MODULE)
-$(call symlink-file,,egl/libGLESv2_adreno.so,$(TARGET_OUT_VENDOR)/lib64/libGLESv2_adreno.so)
-ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_OUT_VENDOR)/lib64/libGLESv2_adreno.so
-$(TARGET_OUT_VENDOR)/lib64/libq3dtools_adreno.so: $(LOCAL_INSTALLED_MODULE)
-$(call symlink-file,,egl/libq3dtools_adreno.so,$(TARGET_OUT_VENDOR)/lib64/libq3dtools_adreno.so)
-ALL_DEFAULT_INSTALLED_MODULES += $(TARGET_OUT_VENDOR)/lib64/libq3dtools_adreno.so
