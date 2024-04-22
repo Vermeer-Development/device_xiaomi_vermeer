@@ -17,3 +17,7 @@ on property:ro.vendor.sensors.xiaomi.double_tap=true
 
 on property:ro.vendor.sensors.xiaomi.udfps=true
     write /sys/class/touch/touch_dev/fod_longpress_gesture_enabled 1
+
+on property:sys.boot_completed=1
+    # STOP EATING MY BATTERY AFTER 100H OF UPTIME FUCK YOU
+    stop statsd
