@@ -3,3 +3,8 @@ genfscon sysfs "/csiphy_umd_paras/csiphy_umd_paras" u:object_r:sysfs_csiphy_umd_
 
 # Perf
 genfscon proc "/perflock_records" u:object_r:vendor_proc_perflock_records:s0
+
+# Sensors
+genfscon sysfs /devices/virtual/touch/touch_dev/fod_longpress_gesture_enabled u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_enabled u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_state u:object_r:vendor_sysfs_sensors:s0

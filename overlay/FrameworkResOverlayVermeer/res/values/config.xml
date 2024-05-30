@@ -342,4 +342,7 @@
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
+    
+    <!-- Type of the tap sensor. Empty if tap is not supported. -->
+    <string name="config_dozeTapSensorType" translatable="false">org.lineageos.sensor.single_tap</string>
 </resources>
