@@ -127,6 +127,17 @@
 
         </service>
 
+        <service
+            android:name=".thermal.ThermalProfileTileService"
+            android:icon="@drawable/ic_thermal_tile"
+            android:label="@string/thermalprofile_title"
+            android:exported="true"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        
         <activity
             android:name=".speaker.ClearSpeakerActivity" 
             android:label="@string/clear_speaker_title">

@@ -29,6 +29,7 @@ import java.io.IOException;
 
 public final class FileUtils {
     private static final String TAG = "FileUtils";
+    private static final boolean DEBUG = true;
 
     private FileUtils() {
         // This class is not supposed to be instantiated
@@ -64,6 +65,19 @@ public final class FileUtils {
         return line;
     }
 
+    public static int readLineInt(String fileName) {
+        String line = readOneLine(fileName);
+        if (line == null) {
+            Log.e(TAG, "readLineInt: line is null for file " + fileName);
+            return 0; // or any default value that makes sense in your context
+        }
+        try {
+            return Integer.parseInt(line.replace("0x", ""));
+        } catch (NumberFormatException e) {
+            Log.e(TAG, "Could not convert string to int from file " + fileName, e);
+        }
+        return 0;
+    }
     /**
      * Writes the given value into the given file
      *
@@ -95,6 +109,9 @@ public final class FileUtils {
         return true;
     }
 
+    public static void writeLine(String fileName, int value) {
+        writeLine(fileName, Integer.toString(value));
+    }
     /**
      * Checks whether the given file exists
      *
