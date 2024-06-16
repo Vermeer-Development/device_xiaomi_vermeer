@@ -324,6 +324,9 @@
         -->
     <string name="config_mainBuiltInDisplayCutoutRectApproximation">M 0,0 H -42 V 122 H 42 V 0 H 0 Z</string>
 
+    <!-- If true, the display will be shifted around in ambient mode. -->
+    <bool name="config_enableBurnInProtection">true</bool>
+
     <!-- Is the device capable of hot swapping an UICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
