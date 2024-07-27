@@ -41,15 +41,6 @@ on post-fs-data
     mkdir /mnt/vendor/persist/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
 
-on property:ro.vendor.sensors.xiaomi.single_tap=true
-    write /sys/class/touch/touch_dev/gesture_single_tap_enabled 1
-
-on property:ro.vendor.sensors.xiaomi.double_tap=true
-    write /sys/class/touch/touch_dev/gesture_double_tap_enabled 1
-
-on property:ro.vendor.sensors.xiaomi.udfps=true
-    write /sys/class/touch/touch_dev/fod_longpress_gesture_enabled 1
-
 on property:vendor.post_boot.parsed=1
     # Set default thermal profile
     write /sys/class/thermal/thermal_message/sconfig 0

@@ -1,0 +1,66 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_headers {
+    name: "xiaomi_vermeer_sensor_notifier_headers",
+    export_include_dirs: ["include"],
+    vendor: true,
+}
+
+cc_binary {
+    name: "sensor-notifier",
+    vendor: true,
+
+    init_rc: ["sensor-notifier.rc"],
+
+    srcs: [
+        "main.cpp",
+        "notifiers/AodNotifier.cpp",
+        "notifiers/LightNotifier.cpp",
+        "notifiers/NonUiNotifier.cpp",
+        "SensorNotifier.cpp",
+        "utils/SensorNotifierUtils.cpp",
+        "utils/SscCalApiWrapper.cpp",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "libhidlbase",
+        "libutils",
+        "android.frameworks.sensorservice@1.0",
+    ],
+
+    whole_static_libs: select(soong_config_variable("xiaomi_vermeer_sensor_notifier", "extension_lib"), {
+        any @ extension_lib: [
+            extension_lib,
+        ],
+        default: [
+            "libsensor-notifier-ext",
+        ],
+    }),
+
+    header_libs: [
+        "generated_kernel_headers",
+        "xiaomi_vermeer_sensor_notifier_headers",
+    ],
+}
+
+cc_library_static {
+    name: "libsensor-notifier-ext",
+    vendor: true,
+
+    srcs: [
+        "SensorNotifierExt.cpp",
+    ],
+
+    shared_libs: [
+        "android.frameworks.sensorservice@1.0",
+    ],
+
+    header_libs: [
+        "xiaomi_vermeer_sensor_notifier_headers",
+    ],
+}
