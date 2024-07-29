@@ -303,6 +303,15 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/xiaomi \
     vendor/qcom/opensource/usb/etc
 
+# System properties
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/properties/build_CN.prop:$(TARGET_COPY_OUT_ODM)/etc/build_CN.prop \
+    $(LOCAL_PATH)/configs/properties/build_GL.prop:$(TARGET_COPY_OUT_ODM)/etc/build_GL.prop
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/properties/build_CN.prop:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/odm/etc/build_CN.prop \
+    $(LOCAL_PATH)/configs/properties/build_GL.prop:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/odm/etc/build_GL.prop
+
 # Telephony
 PRODUCT_PACKAGES += \
     extphonelib \

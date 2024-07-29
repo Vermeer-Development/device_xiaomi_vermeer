@@ -106,6 +106,9 @@ vendor.media.vpp.aie.ltmacebril=20
 vendor.media.vpp.aie.ltmacebrih=0
 debug.config.media.video.dolby_vision_suports=true
 
+# Model-specific properties
+import /odm/etc/build_${ro.boot.hwc}.prop
+
 # Vibrator
 sys.haptic.motor=linear
 sys.haptic.infinitelevel=true
