@@ -32,3 +32,6 @@ qemu.hw.mainkeys=0
 rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ril.subscription.types=NV,RUIM
 ro.telephony.default_network=33,33
+
+# Silence minksocket logs
+persist.log.tag.minksocket=S
