@@ -34,6 +34,17 @@ on boot
     chmod 0666 /sys/class/backlight/panel1-backlight/brightness
     chmod 0666 /sys/class/backlight/panel1-backlight/max_brightness
 
+    #MIUI ADD:Thermal_NodeReq
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chmod 0664 /sys/class/thermal/thermal_message/balance_mode
+    chmod 0664 /sys/class/thermal/thermal_message/torch_real_level
+    chmod 0664 /sys/class/thermal/thermal_message/flash_state
+    chmod 0664 /sys/class/thermal/thermal_message/charger_temp
+    chmod 0664 /sys/class/thermal/power_save/powersave_mode
+    chmod 0664 /sys/class/thermal/power_save/power_level
+    chmod 0664 /sys/class/thermal/thermal_message/board_sensor_temp_comp
+    chmod 0664 /sys/class/thermal/thermal_message/cpu_nolimit_temp
+
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/vendor/misc/mi_fp 0770 system system
