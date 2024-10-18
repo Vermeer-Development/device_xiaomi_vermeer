@@ -26,6 +26,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_BOOT_ANIMATION_RES := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="vermeer_global-user 14 UKQ1.230804.001 V816.0.11.0.UNKMIXM release-keys"
-
-BUILD_FINGERPRINT := POCO/vermeer_global/vermeer:14/UKQ1.230804.001/V816.0.11.0.UNKMIXM:user/release-keys
+    BuildDesc="vermeer_global-user 14 UKQ1.230804.001 V816.0.11.0.UNKMIXM release-keys"
+    BuildFingerprint=POCO/vermeer_global/vermeer:14/UKQ1.230804.001/V816.0.11.0.UNKMIXM:user/release-keys
