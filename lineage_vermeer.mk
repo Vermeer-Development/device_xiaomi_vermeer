@@ -20,4 +20,5 @@ PRODUCT_BRAND := POCO
 PRODUCT_MODEL := 23113RKC6G
 PRODUCT_MANUFACTURER := Xiaomi
 
-BUILD_FINGERPRINT := POCO/vermeer_global/vermeer:14/UKQ1.230804.001/V816.0.11.0.UNKMIXM:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildFingerprint=POCO/vermeer_global/vermeer:14/UKQ1.230804.001/V816.0.11.0.UNKMIXM:user/release-keys
