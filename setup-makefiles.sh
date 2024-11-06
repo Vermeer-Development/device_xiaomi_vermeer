@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=socrates
+DEVICE=vermeer
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -27,7 +27,7 @@ source "${HELPER}"
 
 function vendor_imports() {
     cat <<EOF >>"$1"
-		"device/xiaomi/socrates",
+		"device/xiaomi/vermeer",
 		"hardware/qcom-caf/wlan",
 		"hardware/qcom-caf/sm8550",
 		"hardware/xiaomi",
