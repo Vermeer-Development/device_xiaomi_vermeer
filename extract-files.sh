@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=socrates
+DEVICE=vermeer
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks

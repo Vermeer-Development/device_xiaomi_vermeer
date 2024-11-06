@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_socrates.mk
+     $(LOCAL_DIR)/lineage_vermeer.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_socrates-eng \
-    lineage_socrates-user \
-    lineage_socrates-userdebug
+     lineage_vermeer-eng \
+     lineage_vermeer-user \
+     lineage_vermeer-userdebug
