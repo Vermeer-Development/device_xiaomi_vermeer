@@ -67,6 +67,14 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             sed -i s/xml=version/xml\ version/g "${2}"
             ;;
+        odm/etc/camera/aivsModel_6C06C006 | odm/lib64/libmialgo_aisn.so)
+            [ "$2" = "" ] && return 0
+            split --bytes=20M -d "${2}" "${2}".part
+            ;;
+        odm/lib64/libailab_rawhdr.so | odm/lib64/libxmi_high_dynamic_range_cdsp.so)
+            [ "$2" = "" ] && return 0
+            "${ANDROID_ROOT}"/prebuilts/clang/host/linux-x86/clang-r450784e/bin/llvm-strip --strip-debug "${2}"
+            ;;
         vendor/bin/hw/android.hardware.security.keymint-service-qti)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
