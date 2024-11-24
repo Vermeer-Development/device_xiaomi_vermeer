@@ -38,6 +38,7 @@ import org.lineageos.settings.thermal.ThermalTileService;
 import org.lineageos.settings.refreshrate.RefreshUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingService;
+import org.lineageos.settings.touchsampling.TouchSamplingTileService;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
     private static final boolean DEBUG = false;
@@ -93,6 +94,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Start Touch Sampling Service
         context.startServiceAsUser(new Intent(context, TouchSamplingService.class),
+                UserHandle.CURRENT);
+
+        // Touch Sampling Tile Service
+        context.startServiceAsUser(new Intent(context, TouchSamplingTileService.class), 
                 UserHandle.CURRENT);
     }
 
