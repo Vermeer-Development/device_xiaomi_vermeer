@@ -21,3 +21,7 @@ on property:ro.vendor.sensors.xiaomi.udfps=true
 on property:sys.boot_completed=1
     # STOP EATING MY BATTERY AFTER 100H OF UPTIME FUCK YOU
     stop statsd
+
+on property:vendor.post_boot.parsed=1
+     # Set default thermal profile
+     write /sys/class/thermal/thermal_message/sconfig 0
