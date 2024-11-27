@@ -98,3 +98,7 @@ on property:sys.perf_mode_active=0
     write /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor powersave
+
+on property:vendor.post_boot.parsed=1
+    # Set default thermal profile
+    write /sys/class/thermal/thermal_message/sconfig 0
