@@ -32,6 +32,9 @@ namespace_imports = [
     'vendor/qcom/opensource/dataservices',
 ]
 
+def lib_fixup_odm_suffix(lib: str, partition: str, *args, **kwargs):
+    return f'{lib}-{partition}' if partition == 'odm' else None
+
 
 def lib_fixup_camera_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}-camera'
@@ -44,6 +47,9 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 lib_fixups: lib_fixups_user_type = {
     libs_clang_rt_ubsan: lib_fixup_remove_arch_suffix,
     libs_proto_3_9_1: lib_fixup_vendorcompat,
+    (
+        'sqlite3',
+    ): lib_fixup_odm_suffix,
     (
         'vendor.qti.hardware.camera.postproc@1.0.so',
         'vendor.qti.hardware.camera.device@1.0.so',
@@ -82,12 +88,7 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/modemManager' : blob_fixup()
         .binary_regex_replace(b'fbec992f7f41a65ac8000aeda1bc634e24a12c7513faae379ae889a53553325a', dev_null_sha256)  # /vendor/lib/libqesdk2_0.so
         .binary_regex_replace(b'40821d2c697710a692462776324a4b913935878b3b5f2232a2cd297a6f3ff37f', dev_null_sha256), # /vendor/lib/libqesdk_manager.so
-    ('vendor/etc/seccomp_policy/atfwd@2.0.policy',
-     'vendor/etc/seccomp_policy/wfdhdcphalservice.policy',
-     'vendor/etc/seccomp_policy/modemManager.policy') : blob_fixup()
-        .add_line_if_missing('gettid: 1'),
     'vendor/etc/seccomp_policy/qwesd@2.0.policy' : blob_fixup()
-        .add_line_if_missing('gettid: 1')
         .add_line_if_missing('pipe2: 1'),
     'vendor/etc/qcril_database/upgrade/config/6.0_config.sql' : blob_fixup()
         .regex_replace('(persist\\.vendor\\.radio\\.redir_party_num.*)true', '\\1false'),
