@@ -3,6 +3,9 @@ dalvik.vm.heapsize=36m
 dalvik.vm.dex2oat64.enabled=true
 dev.pm.dyn_samplingrate=1
 
+# Disable default frame rate limit for games
+debug.graphics.game_default_frame_rate.disabled=1
+
 # Graphics
 ro.opengles.version=196610
 
