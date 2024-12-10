@@ -91,6 +91,20 @@ blob_fixups: blob_fixups_user_type = {
     ('odm/lib64/nfc_nci.nqx.default.hw.so',
      'vendor/bin/pnscr') : blob_fixup()
         .add_needed('libbase_shim.so'),
+    ('odm/lib64/libTrueSight.so',
+     'odm/lib64/libalAILDC.so',
+     'odm/lib64/libalLDC.so',
+     'odm/lib64/libMiVideoFilter.so',
+     'odm/lib64/libmorpho_ubwc.so') : blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_createFromHandle')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_isSupported')
+        .clear_symbol_version('AHardwareBuffer_getNativeHandle')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_lockPlanes')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
     ('vendor/bin/hw/android.hardware.security.keymint-service-qti',
      'vendor/lib64/libqtikeymint.so') : blob_fixup()
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
@@ -105,6 +119,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('dolbycodec_shim.so'),
     'vendor/lib64/libqcodec2_core.so' : blob_fixup()
         .add_needed('libcodec2_shim.so'),
+    'vendor/lib64/libsnpe_config.so' : blob_fixup()
+        .add_needed('liblog.so'),
     'vendor/lib64/vendor.libdpmframework.so' : blob_fixup()
         .add_needed('libhidlbase_shim.so'),
 }  # fmt: skip
