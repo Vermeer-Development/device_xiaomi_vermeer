@@ -7,6 +7,7 @@
 DEVICE_PATH := device/xiaomi/vermeer
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
+BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # A/B
