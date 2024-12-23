@@ -23,6 +23,6 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="vermeer_global-user 14 UKQ1.230804.001 V816.0.5.0.UNKMIXM release-keys"
+    PRIVATE_BUILD_DESC="vermeer_global-user 14 UKQ1.230804.001 V816.0.11.0.UNKMIXM release-keys"
 
-BUILD_FINGERPRINT := POCO/vermeer_global/vermeer:14/UKQ1.230804.001/V816.0.5.0.UNKMIXM:user/release-keys
+BUILD_FINGERPRINT := POCO/vermeer_global/vermeer:14/UKQ1.230804.001/V816.0.11.0.UNKMIXM:user/release-keys
