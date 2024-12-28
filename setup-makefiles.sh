@@ -42,6 +42,8 @@ function lib_to_package_fixup_vendor_variants() {
     fi
 
     case "$1" in
+        vendor.qti.hardware.camera.device@1.0.so | \
+        vendor.qti.hardware.camera.postproc@1.0.so | \
         vendor.qti.imsrtpservice@3.0 | \
         vendor.qti.imsrtpservice@3.1 | \
         vendor.qti.diaghal@1.0)
