@@ -271,7 +271,11 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlayVermeer \
     FrameworkResOverlayVermeer \
     LineageSDKOverlayVermeer \
+    SettingsOverlayChina \
+    SettingsOverlayGlobal \
     SystemUIOverlayVermeer \
+    SettingsProviderOverlayVermeerChina \
+    SettingsProviderOverlayVermeerGlobal \
     SettingsOverlayVermeer \
     TelephonyOverlayVermeer
 
