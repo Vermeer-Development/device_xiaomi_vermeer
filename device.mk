@@ -253,7 +253,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayVermeer \
     FrameworkResOverlayVermeer \
+    SettingsOverlayPOCO \
+    SettingsOverlayRedmi \
     SystemUIOverlayVermeer \
+    SettingsProviderOverlayVermeerPOCO \
+    SettingsProviderOverlayVermeerRedmi \
     SettingsOverlayVermeer \
     TelephonyOverlayVermeer \
     WifiOverlayVermeer
