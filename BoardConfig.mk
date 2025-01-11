@@ -5,7 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/vermeer
-KERNEL_PATH := device/xiaomi/vermeer-kernel
+KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -67,9 +67,8 @@ SOONG_CONFIG_ufsbsg_ufsframework := bsg
 TARGET_SCREEN_DENSITY := 530
 
 # DTB
-BOARD_USES_DT := true
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbs/dtbo.img
-BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
@@ -87,17 +86,16 @@ BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_IMAGE_NAME  := Image
 
 BOARD_KERNEL_CMDLINE := \
-    kasan=off \
+    video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
-    rcu_nocbs=all \
-    rcutree.enable_rcu_lazy=1 \
+    swinfo.fingerprint=$(LINEAGE_VERSION) \
     mtdoops.fingerprint=$(LINEAGE_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.init_fatal_reboot_target=recovery
+    androidboot.console=ttyMSM0
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
@@ -108,22 +106,24 @@ BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_INIT_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
-TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/Image
+TARGET_KERNEL_SOURCE := device/xiaomi/vermeer-kernel/kernel-headers
 PRODUCT_COPY_FILES += \
-    $(TARGET_PREBUILT_KERNEL):kernel
+	$(KERNEL_PATH)/kernel:kernel
 
 # Kernel modules
-device_second_stage_modules := \
-    wl2866d.ko \
-    wl2868c.ko \
-    xiaomi_touch.ko \
-    goodix_ts.ko
+BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/system_dlkm/modules.load))
 
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES += $(addprefix $(KERNEL_PREBUILT_DIR)/vendor_dlkm/, $(device_second_stage_modules))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD += $(device_second_stage_modules)
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD += $(device_second_stage_modules)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_ramdisk/modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/vendor_ramdisk/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/vendor_ramdisk/modules.blocklist
+
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_ramdisk/modules.load.recovery))
+RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/vendor_ramdisk/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
+
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_dlkm/modules.load))
+BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/vendor_dlkm/, $(BOARD_VENDOR_KERNEL_MODULES_LOAD))
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
