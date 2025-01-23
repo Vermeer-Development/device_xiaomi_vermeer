@@ -187,6 +187,9 @@ TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/properties/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/properties/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/properties/vendor.prop
 
+# Touchscreen
+$(call soong_config_set, XIAOMI_TOUCH, HIGH_TOUCH_POLLING_PATH, /sys/devices/virtual/touch/touch_dev/bump_sample_rate)
+
 # VINTF
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \

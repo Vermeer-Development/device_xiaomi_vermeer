@@ -133,9 +133,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service
 
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-
 # Dolby
 PRODUCT_PACKAGES += \
     XiaomiDolby
@@ -366,6 +363,13 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
+
+# Touchscreen
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.xiaomi
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 # Updatable APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
