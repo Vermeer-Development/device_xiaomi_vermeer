@@ -44,6 +44,10 @@ on boot
     chmod 0664 /sys/class/thermal/thermal_message/board_sensor_temp_comp
     chmod 0664 /sys/class/thermal/thermal_message/cpu_nolimit_temp
 
+    # High touch polling rate
+    chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
+    chmod 0660 /sys/devices/virtual/touch/touch_dev/bump_sample_rate
+
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/vendor/misc/mi_fp 0770 system system
