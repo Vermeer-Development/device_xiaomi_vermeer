@@ -29,6 +29,12 @@ on boot
     chmod 0664 /sys/class/touch/touch_dev/fod_press_status
 
 
+on property:sys.perf_mode_active=1
+    write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 1
+     
+on property:sys.perf_mode_active=0
+    write /sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled 0
+
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
     mkdir /data/vendor/misc/mi_fp 0770 system system
