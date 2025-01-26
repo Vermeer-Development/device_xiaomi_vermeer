@@ -48,11 +48,12 @@ PRODUCT_PACKAGES += \
     libaudiochargerlistener \
     libbatterylistener \
     libfmpal \
+    libats \
     libhfp_pal \
-    libsndcardparser \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    vendor.qti.hardware.AGMIPC@1.0-impl \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
@@ -94,6 +95,9 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    lib_bt_aptx \
+    lib_bt_ble \
+    lib_bt_bundle \
     audio.bluetooth.default \
     libbluetooth_audio_session
 

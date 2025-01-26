@@ -1,6 +1,11 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
 ## are from POCO F6 Pro (OS2.0.102.0.VNKMIXM).
 
+# Current blobs with ELF checks disabled:
+# audio.primary.kalama.so depends on liblx-osal and vendor.qti.hardware.AGMIPC@1.0-impl, which are gnu makefile targets
+# libagm depends on libar-gsl, libats and liblx-osal, which are gnu makefile targets
+# libmcs depends on libar-acdb, libats and liblx-osal, which are gnu makefile targets
+
 # ACDBs
 odm/etc/acdbdata/Tutu/Tutu_acdb_cal.acdb
 odm/etc/acdbdata/Tutu/Tutu_workspaceFileXml.qwsp
@@ -188,7 +193,7 @@ vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml
 vendor/etc/vintf/manifest/manifest_non_qmaa.xml
-vendor/lib64/hw/audio.primary.kalama.so
+vendor/lib64/hw/audio.primary.kalama.so;DISABLE_CHECKELF
 vendor/lib64/hw/gyro_fusion_interface.so
 vendor/lib64/hw/sound_trigger.primary.kalama.so
 vendor/lib64/libAlacSwDec.so
@@ -203,11 +208,7 @@ vendor/lib64/libmi-stc-HW-modulate.so
 vendor/lib64/libeyecare.so
 vendor/lib64/lib_misound_asc.so
 vendor/lib64/libadm.so
-vendor/lib64/libar-acdb.so
-vendor/lib64/libar-gpr.so
-vendor/lib64/libar-gsl.so
 vendor/lib64/libar-pal.so;DISABLE_CHECKELF
-vendor/lib64/libats.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libcapiv2svacnnvendor.so
@@ -220,9 +221,7 @@ vendor/lib64/libeai_float.so
 vendor/lib64/libfcsam.so;FIX_SONAME
 vendor/lib64/libkaraokepal.so;DISABLE_CHECKELF
 vendor/lib64/liblistensoundmodel2vendor.so
-vendor/lib64/liblx-ar_util.so
-vendor/lib64/liblx-osal.so
-vendor/lib64/libmcs.so
+vendor/lib64/libmcs.so;DISABLE_CHECKELF
 vendor/lib64/libmisfpsop.so
 vendor/lib64/libmisoundsa.so
 vendor/lib64/libmispowerop.so
@@ -232,13 +231,10 @@ vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libvui_dmgr.so
 vendor/lib64/libvui_dmgr_client.so
 vendor/lib64/libxlog.so
+vendor/lib64/libagm.so;DISABLE_CHECKELF
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
-
-# Audio AGM
-vendor/lib64/libagm.so
-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 
 # Audio FX modules
 vendor/lib64/soundfx/libasphere.so
@@ -266,9 +262,6 @@ vendor/etc/vintf/manifest/bttpi-saidl.xml
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.bluetooth@1.1-impl-qti.so
 vendor/lib64/hw/vendor.qti.hardware.bttpi-impl.so
-vendor/lib64/lib_bt_aptx.so
-vendor/lib64/lib_bt_ble.so
-vendor/lib64/lib_bt_bundle.so
 vendor/lib64/lib_bt_lhdc.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libsoc_helper.so

@@ -62,10 +62,15 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_camera_suffix,
     (
         'audio.primary.kalama',
+        'libar-acdb',
+        'libar-gsl',
         'libagmclient',
+        'liblx-osal',
         'libagmmixer',
+        'libats',
         'libpalclient',
         'libwpa_client',
+        'vendor.qti.hardware.AGMIPC@1.0-impl',
     ): lib_fixup_remove,
 }
 
