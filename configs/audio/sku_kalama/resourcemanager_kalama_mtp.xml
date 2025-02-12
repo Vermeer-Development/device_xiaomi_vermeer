@@ -75,8 +75,8 @@
         <param key="hifi_filter" value="false"/>
         <param key="max_sessions" value="128"/>
         <param key="max_nonTunnel_sessions" value="4"/>
-        <param key="logging_level" value ="0xF" />
-        <param key="context_manager_enable" value ="false" />
+        <param key="logging_level" value ="0x7" />
+        <param key="context_manager_enable" value ="true" />
         <param key="upd_dedicated_be" value ="true" />
         <param key="upd_duty_cycle_enable" value="false" />
         <param key="dual_mono" value ="false" />
@@ -430,7 +430,7 @@
         -->
             <usecase>
                 <name>PAL_STREAM_COMPRESSED</name>
-                <ec_enable>1</ec_enable>
+                <ec_enable>0</ec_enable>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOIP_TX</name>
@@ -548,7 +548,7 @@
         -->
             <usecase>
                 <name>PAL_STREAM_COMPRESSED</name>
-                <ec_enable>1</ec_enable>
+                <ec_enable>0</ec_enable>
             </usecase>
             <usecase>
                 <name>PAL_STREAM_VOICE_CALL</name>
@@ -587,12 +587,13 @@
         </in-device>
         <in-device>
             <id>PAL_DEVICE_IN_VI_FEEDBACK</id>
-            <back_end_name>CODEC_DMA-LPAIF_WSA-TX-0</back_end_name>
+            <back_end_name>TDM-LPAIF-TX-SECONDARY</back_end_name>
             <max_channels>2</max_channels>
             <channels>2</channels>
             <samplerate>48000</samplerate>
             <bit_width>32</bit_width>
             <snd_device_name>vi-feedback</snd_device_name>
+            <supported_bit_format >PAL_AUDIO_FMT_PCM_S32_LE</supported_bit_format>
         </in-device>
         <in-device>
             <id>PAL_DEVICE_IN_BLUETOOTH_A2DP</id>
@@ -659,7 +660,7 @@
             <snd_device_name>ext_ec_ref_tx</snd_device_name>
             <max_channels>2</max_channels>
             <channels>2</channels>
-            <bit_width>24</bit_width>
+            <bit_width>32</bit_width>
             <samplerate>48000</samplerate>
         </in-device>
         <in-device>
@@ -689,18 +690,19 @@
             <max_channels>2</max_channels>
             <channels>2</channels>
             <samplerate>48000</samplerate>
-            <bit_width>24</bit_width>
+            <!--NEED CHK-->
+            <bit_width>32</bit_width>
             <snd_device_name>speaker</snd_device_name>
-            <speaker_protection_enabled>0</speaker_protection_enabled>
+            <speaker_protection_enabled>1</speaker_protection_enabled>
             <fractional_sr>0</fractional_sr>
             <!-- To enable external EC reference the flag extec_ref_enabled must be added as 1 -->
-            <ext_ec_ref_enabled>1</ext_ec_ref_enabled>
+            <ext_ec_ref_enabled>0</ext_ec_ref_enabled>
             <cps_enabled>0</cps_enabled>
             <vbat_enabled>0</vbat_enabled>
             <!--specify the supported bit format on speaker end point -->
             <!--this should be in the form of pal_audio_fmt_id-->
             <!--e.g <supported_bit_format >PAL_AUDIO_FMT_PCM_S24_LE</supported_bit_format>-->
-            <supported_bit_format>PAL_AUDIO_FMT_PCM_S24_LE</supported_bit_format>
+            <supported_bit_format>PAL_AUDIO_FMT_PCM_S32_LE</supported_bit_format>
             <!-- RAS should be enabled with speaker protection always -->
             <ras_enabled>0</ras_enabled>
             <!-- Flag to specify speaker in case Voice call is switched from
@@ -752,7 +754,7 @@
             <max_channels>2</max_channels>
             <channels>1</channels>
             <!-- To enable external EC reference the flag extec_ref_enabled must be added as 1 -->
-            <ext_ec_ref_enabled>1</ext_ec_ref_enabled>
+            <ext_ec_ref_enabled>0</ext_ec_ref_enabled>
             <samplerate>48000</samplerate>
             <!--NEED CHK-->
             <bit_width>24</bit_width>
