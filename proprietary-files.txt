@@ -2584,6 +2584,19 @@ vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
 vendor/lib64/libtime_genoff.so
 
+# Touchfeature
+odm/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service
+odm/bin/touch_report_debug
+odm/bin/toucheventcheck
+odm/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc
+odm/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature@1.0-service.xml
+odm/etc/init.panel_info.sh
+odm/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
+odm/lib64/libtensorflowlite_touch_c.so
+odm/lib64/libtouchsensor.so
+odm/lib64/libtouchreport.so
+vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so;MODULE_SUFFIX=-vendor
+
 # Touch firmware
 odm/firmware/goodix_cfg_group_vermeer.bin
 odm/firmware/goodix_cfg_group_vermeer_SelfDis.bin

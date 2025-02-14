@@ -29,10 +29,6 @@ on post-fs-data
     mkdir /mnt/vendor/persist/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
 
-service touch_report /odm/bin/touch_report
-    disabled
-    override
-
 on boot
    chmod 0666 /sys/class/backlight/panel0-backlight/brightness
    chmod 0666 /sys/class/backlight/panel0-backlight/max_brightness
