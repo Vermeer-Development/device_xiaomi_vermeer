@@ -57,3 +57,6 @@
 /sys/{class,devices/virtual}/thermal/thermal_message/flash_state u:object_r:sys_thermal_flash_state:s0
 /sys/{class,devices/virtual}/thermal/thermal_message/torch_real_level u:object_r:sys_thermal_torch_real_level:s0
 /sys/{class,devices/virtual}/thermal/thermal_message/wifi_limit u:object_r:sys_thermal_wifi_limit:s0
+ 
+# Wakeup
+/sys/devices/platform/goodix_ts.0/wakeup/wakeup26/event_count u:object_r:sysfs_goodix_touch:s0
