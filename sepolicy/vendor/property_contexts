@@ -12,3 +12,10 @@ vendor.sys.thermal.data.path u:object_r:vendor_thermal_normal_prop:s0
 # NFC
 ro.vendor.nfc. u:object_r:vendor_nfc_mi_prop:s0
 ro.vendor.se. u:object_r:vendor_nfc_mi_prop:s0
+
+# Touchfeature
+persist.vendor.hostprocess.                       u:object_r:vendor_touch_hostprocess_prop:s0
+persist.vendor.touchfeature.                      u:object_r:vendor_touchfeature_prop:s0
+ro.vendor.touchfeature.type                       u:object_r:vendor_touchfeature_prop:s0
+ro.vendor.touch.touchscheduler.enable             u:object_r:vendor_touchfeature_prop:s0
+vendor.touchfeature.                              u:object_r:vendor_touchfeature_prop:s0

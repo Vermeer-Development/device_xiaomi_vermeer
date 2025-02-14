@@ -37,6 +37,25 @@
 # Touchscreen
 /sys/devices/platform/goodix_ts.0(/.*)? u:object_r:sysfs_goodix_touch:s0
 
+# Touchfeature
+/dev/miev                                                   u:object_r:miev_device:s0
+/dev/xiaomi-touch                                           u:object_r:touchfeature_device:s0
+/sys/devices/virtual/touch/touch_dev/abnormal_event         u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/enable_touch_raw       u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/fod_press_status       u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/fod_test               u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/palm_sensor            u:object_r:sysfs_tp_virtual_prox:s0
+/sys/devices/virtual/touch/touch_dev/resolution_factor      u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/touch_doze_analysis    u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/touch_finger_status    u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/touch_ic_buffer        u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/touch_log_level        u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/touch_thp_(.*)         u:object_r:sysfs_touch_hostprocess:s0
+/sys/devices/virtual/touch/touch_dev/touch_vendor           u:object_r:sysfs_touch_hostprocess:s0
+/(vendor|odm)/etc/init.panel_info.sh                        u:object_r:vendor_touch_init_shell_exec:s0
+/(vendor|system/vendor|odm|vendor/odm)/bin/toucheventcheck  u:object_r:tpevent_exec:s0
+/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature-service   u:object_r:hal_touchfeature_xiaomi_default_exec:s0
+
 # Thermal
 /vendor/bin/mi_thermald u:object_r:mi_thermald_exec:s0
 /data/vendor/thermal(/.*)? u:object_r:thermal_data_file:s0
