@@ -1,22 +1,38 @@
+type hal_touchfeature_xiaomi_hwservice, hwservice_manager_type;
+
 allow hal_touchfeature_xiaomi_default vendor_touchfeature_prop:file { getattr open read };
+allow hal_touchfeature_xiaomi_client hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+allow hal_touchfeature_xiaomi_default fwk_sensor_hwservice:hwservice_manager find;
+allow hal_touchfeature_xiaomi_default hal_touchfeature_xiaomi_hwservice:hwservice_manager find;
+allow hal_touchfeature_xiaomi_default input_device:chr_file rw_file_perms;
+allow hal_touchfeature_xiaomi_default input_device:dir r_dir_perms;
 allow hal_touchfeature_xiaomi_default proc_tp_file:file { open read write };
 allow hal_touchfeature_xiaomi_default self:capability sys_nice;
 allow hal_touchfeature_xiaomi_default sysfs_touch_hostprocess:file { open read write };
 allow hal_touchfeature_xiaomi_default touchfeature_device:chr_file { ioctl map open read write };
 allow hal_touchfeature_xiaomi_default input_device:dir { read open search };
 allow hal_touchfeature_xiaomi_default input_device:chr_file rw_file_perms;
-
+allow hal_touchfeature_xiaomi_default self:cap_userns sys_nice;
+allow hal_touchfeature_xiaomi_default surfaceflinger:binder transfer;
+allow hal_touchfeature_xiaomi_default sysfs:file { getattr open read write };
+allow hal_touchfeature_xiaomi_default system_server:binder call;
+allow hal_touchfeature_xiaomi_default touchfeature_device:chr_file rw_file_perms;
+allow hal_touchfeature_xiaomi_default touchfeature_device:file { getattr map read };
+allow hal_touchfeature_xiaomi_default uhid_device:chr_file rw_file_perms;
+allow hal_touchfeature_xiaomi_default vendor_hal_perf_default:binder call;
+allow hal_touchfeature_xiaomi_default vendor_hal_perf_hwservice:hwservice_manager find;
+allow hal_touchfeature_xiaomi_default vendor_touchfeature_prop:file { getattr open read };
+allow hal_touchfeature_xiaomi touchfeature_device:chr_file rw_file_perms;
+add_hwservice(hal_touchfeature_xiaomi_server, hal_touchfeature_xiaomi_hwservice)
 add_service(hal_touchfeature_xiaomi_server, hal_touchfeature_xiaomi_service)
-
 binder_call(hal_touchfeature_xiaomi_default, servicemanager)
-
+binder_call(hal_touchfeature_xiaomi_client, hal_touchfeature_xiaomi_server)
+hal_client_domain(hal_touchfeature_xiaomi_default, vendor_hal_perf)
 hal_server_domain(hal_touchfeature_xiaomi_default, hal_touchfeature_xiaomi)
-
 init_daemon_domain(hal_touchfeature_xiaomi_default)
 
 get_prop(hal_touchfeature_xiaomi_default, vendor_touchfeature_prop)
 get_prop(hal_touchfeature_xiaomi_default, vendor_touch_hostprocess_prop)
 set_prop(hal_touchfeature_xiaomi_default, vendor_touchfeature_prop)
 set_prop(hal_touchfeature_xiaomi_default, vendor_touch_hostprocess_prop)
-
 vndbinder_use(hal_touchfeature_xiaomi)

@@ -18,6 +18,7 @@ genfscon sysfs "/devices/virtual/touch/touch_dev/touch_finger_status"   u:object
 genfscon sysfs "/devices/virtual/touch/touch_dev/touch_ic_buffer"       u:object_r:sysfs_touch_hostprocess:s0
 genfscon sysfs "/devices/virtual/touch/touch_dev/touch_thp_ic_cmd_data" u:object_r:sysfs_touch_hostprocess:s0
 genfscon sysfs "/devices/virtual/touch/touch_dev/touch_thp_ic_cmd"      u:object_r:sysfs_touch_hostprocess:s0
+genfscon sysfs "/devices/virtual/touch/touch_dev/touch_vendor"          u:object_r:sysfs_touch_hostprocess:s0
 
 # Wakeup
 genfscon sysfs "/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi0/spi0.0/wakeup" u:object_r:sysfs_wakeup:s0

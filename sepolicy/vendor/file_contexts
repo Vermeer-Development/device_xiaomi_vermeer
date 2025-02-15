@@ -54,7 +54,7 @@
 /sys/devices/virtual/touch/touch_dev/touch_vendor           u:object_r:sysfs_touch_hostprocess:s0
 /(vendor|odm)/etc/init.panel_info.sh                        u:object_r:vendor_touch_init_shell_exec:s0
 /(vendor|system/vendor|odm|vendor/odm)/bin/toucheventcheck  u:object_r:tpevent_exec:s0
-/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature-service   u:object_r:hal_touchfeature_xiaomi_default_exec:s0
+/(odm|vendor/odm|vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hw\.touchfeature@1\.0-service u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 
 # Thermal
 /vendor/bin/mi_thermald u:object_r:mi_thermald_exec:s0
