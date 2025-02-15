@@ -32,3 +32,9 @@ on post-fs-data
 service touch_report /odm/bin/touch_report
     disabled
     override
+
+on boot
+   chmod 0666 /sys/class/backlight/panel0-backlight/brightness
+   chmod 0666 /sys/class/backlight/panel0-backlight/max_brightness
+   chmod 0666 /sys/class/backlight/panel1-backlight/brightness
+   chmod 0666 /sys/class/backlight/panel1-backlight/max_brightness
