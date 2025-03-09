@@ -1,2 +1,5 @@
+# Display
+binder_call(system_server, vendor_hal_displayfeature_xiaomi_default)
+
 # Touchfeature
 allow system_server hal_touchfeature_xiaomi_default:binder call;
