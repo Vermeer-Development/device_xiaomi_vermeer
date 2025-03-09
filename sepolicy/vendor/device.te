@@ -1,1 +1,2 @@
+type vendor_displayfeature_device, dev_type;
 type vendor_fingerprint_device, dev_type;
