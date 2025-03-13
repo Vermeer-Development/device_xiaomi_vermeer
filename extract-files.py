@@ -82,6 +82,15 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libcrypto.so', 'libcrypto-v33.so'),
     'odm/lib64/libwrapper_dlengine.so' : blob_fixup()
         .add_needed('liblog.so'),
+    ('odm/lib64/libcamxcommonutils.so',
+     'odm/lib64/hw/com.qti.chi.override.so',
+     'odm/lib64/hw/camera.xiaomi.so',
+     'odm/lib64/libchifeature2.so',
+     'odm/lib64/libmialgoengine.so') : blob_fixup()
+        .add_needed('libprocessgroup_shim.so'),
+    ('odm/lib64/nfc_nci.nqx.default.hw.so',
+     'vendor/bin/pnscr') : blob_fixup()
+        .add_needed('libbase_shim.so'),
     ('vendor/bin/hw/android.hardware.security.keymint-service-qti',
      'vendor/lib64/libqtikeymint.so') : blob_fixup()
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
