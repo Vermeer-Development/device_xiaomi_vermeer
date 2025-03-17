@@ -1,0 +1,11 @@
+# Audio
+tas.smartpa.debug.                      u:object_r:exported_system_prop:s0
+
+# Fingerprint
+sys.fp.miui.token                       u:object_r:exported_system_prop:s0 
+
+# Hardware
+ro.hardware.chipname                    u:object_r:exported_default_prop:s0
+
+# Vendor aware available
+ro.vendor.aware_available                   u:object_r:vendor_aware_available_prop:s0
