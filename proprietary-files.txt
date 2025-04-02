@@ -1507,7 +1507,6 @@ vendor/etc/vintf/manifest/vendor.xiaomi.hardware.displayfeature@1.0-service.xml
 vendor/lib64/libdisplayfeature.so
 vendor/lib64/libdisplayfeatureservice.so
 vendor/lib64/libqservice.so
-vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=-vendor
 
 # Dolby
 odm/etc/dolby/dax-default.xml
@@ -2621,7 +2620,6 @@ odm/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
 odm/lib64/libtensorflowlite_touch_c.so
 odm/lib64/libtouchsensor.so
 odm/lib64/libtouchreport.so
-vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so;MODULE_SUFFIX=-vendor
 
 # Touch firmware
 odm/firmware/goodix_cfg_group_vermeer.bin
