@@ -91,6 +91,19 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             grep -q "dolbycodec_shim.so" "${2}" || "${PATCHELF}" --add-needed "dolbycodec_shim.so" "${2}"
             ;;
+        odm/lib64/libcamxcommonutils.so|\
+        odm/lib64/hw/com.qti.chi.override.so|\
+        odm/lib64/hw/camera.xiaomi.so|\
+        odm/lib64/libchifeature2.so|\
+        odm/lib64/libmialgoengine.so)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libprocessgroup_shim.so" "${2}"
+            ;;
+        odm/lib64/nfc_nci.nqx.default.hw.so|\
+        vendor/bin/pnscr)
+            [ "$2" = "" ] && return 0
+            "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+            ;;
         vendor/etc/seccomp_policy/atfwd@2.0.policy|\
         vendor/etc/seccomp_policy/wfdhdcphalservice.policy|\
         vendor/etc/seccomp_policy/modemManager.policy)
