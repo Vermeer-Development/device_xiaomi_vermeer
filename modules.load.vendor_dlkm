@@ -87,6 +87,7 @@ qfprom-sys.ko
 qti-fixed-regulator.ko
 qpnp-amoled-regulator.ko
 wl2866d.ko
+wl2868c.ko
 qti-ocp-notifier.ko
 msm_geni_serial.ko
 frpc-adsprpc.ko
@@ -244,6 +245,7 @@ swr_ctrl_dlkm.ko
 msm-mmrm.ko
 audio_pkt_dlkm.ko
 audpkt_ion_dlkm.ko
+aw882xx_dlkm.ko
 msm_video.ko
 lpass_cdc_va_macro_dlkm.ko
 msm_kgsl.ko

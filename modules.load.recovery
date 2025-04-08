@@ -133,6 +133,7 @@ qti-fixed-regulator.ko
 proxy-consumer.ko
 qpnp-amoled-regulator.ko
 wl2866d.ko
+wl2868c.ko
 rpmh-regulator.ko
 stub-regulator.ko
 debug-regulator.ko
