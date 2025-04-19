@@ -28,6 +28,7 @@ camcc-crow.ko
 gpucc-kalama.ko
 bam_dma.ko
 msm_gpi.ko
+mi_thermal_interface.ko
 qcom_cpuss_sleep_stats.ko
 pdr_interface.ko
 heap_mem_ext_v01.ko
