@@ -189,10 +189,10 @@ repeater-i2c-eusb2.ko
 redriver.ko
 nb7vpq904m.ko
 xiaomi_touch.ko
-goodix_core.ko
 pm8941-pwrkey.ko
 qcom-hv-haptics.ko
 goodix_fod.ko
+goodix_ts.ko
 rtc-pm8xxx.ko
 i2c-msm-geni.ko
 i3c-master-msm-geni.ko
