@@ -1,5 +1,10 @@
 # Camera
 persist.vendor.EnableP3ColorSpace               u:object_r:vendor_camera_p3enable_prop:s0
+persist.vendor.low.cutoff                       u:object_r:vendor_camera_prop:s0
+persist.vendor.algo.aivs.debug                  u:object_r:vendor_camera_prop:s0
+ro.vendor.audio.us.proximity                    u:object_r:vendor_camera_prop:s0
+ro.vendor.gfx.opencl.enable_buffer_to_image     u:object_r:vendor_camera_prop:s0
+vendor.camera.sensor.logsystem                  u:object_r:vendor_camera_prop:s0
 vendor.camera.sensor.                           u:object_r:vendor_camera_sensor_prop:s0
 
 # Fingerprint
