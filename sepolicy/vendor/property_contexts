@@ -14,6 +14,19 @@ persist.vendor.sys.fp. u:object_r:vendor_fp_prop:s0
 # Thermal
 vendor.sys.thermal.data.path u:object_r:vendor_thermal_normal_prop:s0
 
+# Ril
+persist.vendor.radio.imei                       u:object_r:vendor_radio_prop:s0
+persist.vendor.radio.meid                       u:object_r:vendor_radio_prop:s0
+ro.vendor.oem.boot_completed                    u:object_r:vendor_radio_prop:s0
+ro.vendor.oem.imei                              u:object_r:vendor_radio_prop:s0
+ro.vendor.oem.meid                              u:object_r:vendor_radio_prop:s0
+ro.vendor.oem.psno                              u:object_r:vendor_radio_prop:s0
+ro.vendor.oem.serialno                          u:object_r:vendor_radio_prop:s0
+ro.vendor.oem.sno                               u:object_r:vendor_radio_prop:s0
+ro.vendor.ril                           u:object_r:vendor_public_vendor_default_prop:s0
+ro.vendor.ril.svlte1x                   u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.svdo                      u:object_r:vendor_radio_prop:s0
+
 # NFC
 ro.vendor.nfc. u:object_r:vendor_nfc_mi_prop:s0
 ro.vendor.se. u:object_r:vendor_nfc_mi_prop:s0

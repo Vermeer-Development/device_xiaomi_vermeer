@@ -38,6 +38,9 @@
 /vendor/bin/hw/dolbycodec2                                                 u:object_r:vendorcodec_exec:s0
 /vendor/bin/hw/vendor\.dolby\.media\.c2@1\.0-service                       u:object_r:mediacodec_exec:s0
 
+# Ril
+/dev/smd8                                         u:object_r:vendor_radio_smd_device:s0
+
 # NFC
 /odm/bin/hw/vendor\.nxp\.hardware\.nfc@2\.0-service u:object_r:hal_nfc_default_exec:s0
 
