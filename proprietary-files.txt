@@ -123,6 +123,7 @@ vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
+vendor/lib64/hw/gyro_fusion_interface.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libEvrcSwCodec.so
@@ -1383,6 +1384,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 # Display (SDM)
 odm/lib64/libmiClstc.so
 odm/lib64/libmiXmlParser.so
+odm/lib64/libadaptivehdr.so
 vendor/etc/clstc_config_library.xml
 vendor/etc/display/DPU660.xml
 vendor/etc/display/DPU670.xml
@@ -1449,6 +1451,7 @@ odm/etc/display/qdcm_calib_data_xiaomi_n11_42_02_0a_cmd_mode_dsc_dsi_panel.json
 odm/etc/mdss_dsi_n11_42_02_0a_dsc_cmd_mi.xml
 vendor/etc/df_default.xml
 vendor/etc/display/3dlut-pt-onnx-ptq-htp-fp16.dlc
+vendor/etc/display/LUT.txt
 vendor/etc/display/LUT0.txt
 vendor/etc/display/LUT1.txt
 vendor/etc/display/LUT2.txt
@@ -1787,6 +1790,7 @@ system_ext/priv-app/QtiTelephony/QtiTelephony.apk;REQUIRED=QtiTelephonyCompat
 system_ext/priv-app/ims/ims.apk;REQUIRED=QtiTelephonyCompat
 
 # IMS (vendor)
+vendor/bin/ims-dataservice-daemon
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdaemon
 vendor/etc/init/ims-dataservice-daemon.rc
@@ -1807,6 +1811,7 @@ vendor/lib64/lib-imscommon.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
 vendor/lib64/lib-imsrcsservice.so
+vendor/lib64/lib-imsdcservice.so
 vendor/lib64/lib-imsservice.so
 vendor/lib64/lib-imsvtcore.so
 vendor/lib64/lib-imsxml.so
