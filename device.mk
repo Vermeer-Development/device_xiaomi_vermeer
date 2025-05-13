@@ -273,6 +273,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
+# Light
+$(call soong_config_set,xiaomi_vermeer_sensor_notifier,extension_lib,//device/xiaomi/vermeer:libsensor-notifier-ext-light)
+
 # Overlay
 PRODUCT_PACKAGES += \
     CarrierConfigOverlayVermeer \
