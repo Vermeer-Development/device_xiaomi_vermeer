@@ -201,7 +201,7 @@ DEVICE_MANIFEST_FILE := \
     $(DEVICE_PATH)/configs/vintf/manifest_vermeer.xml
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2025-02-01
+VENDOR_SECURITY_PATCH := 2025-04-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
