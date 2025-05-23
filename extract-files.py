@@ -115,7 +115,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_line_if_missing('pipe2: 1'),
     'vendor/etc/qcril_database/upgrade/config/6.0_config.sql' : blob_fixup()
         .regex_replace('(persist\\.vendor\\.radio\\.redir_party_num.*)true', '\\1false'),
-    ('vendor/lib64/c2.dolby.hevc.dec.so',
+    ('vendor/lib64/hw/audio.primary.kalama.so',
+     'vendor/lib64/c2.dolby.hevc.dec.so',
      'vendor/lib64/c2.dolby.hevc.enc.so',
      'vendor/lib64/c2.dolby.hevc.sec.dec.so',
      'vendor/lib64/libDecoderProcessor.so',

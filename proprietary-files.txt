@@ -186,7 +186,11 @@ vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
+vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml
+vendor/etc/vintf/manifest/manifest_non_qmaa.xml
+vendor/lib64/hw/audio.primary.kalama.so
 vendor/lib64/hw/gyro_fusion_interface.so
+vendor/lib64/hw/sound_trigger.primary.kalama.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libEvrcSwCodec.so
@@ -230,9 +234,7 @@ vendor/lib64/libvui_dmgr_client.so
 vendor/lib64/libxlog.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
-
-# Audio - from dm3qxxx-user-14-UP1A.231005.007-S918BXXU6CXH7-release-keys
-vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so|f0fc53c87cf6e0fd504c929af889c6979604ad12
+vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
 
 # Audio AGM
 vendor/lib64/libagm.so
