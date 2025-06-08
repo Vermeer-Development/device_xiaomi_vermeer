@@ -110,6 +110,8 @@ PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
     android.hardware.boot-service.qti.recovery
 
+$(call soong_config_set, ufsbsg, ufsframework, bsg)
+
 # Camera
 $(call inherit-product-if-exists, vendor/xiaomi/vermeer-camera/miuicamera.mk)
 

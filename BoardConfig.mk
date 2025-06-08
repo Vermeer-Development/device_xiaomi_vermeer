@@ -56,11 +56,6 @@ $(call soong_config_set, android_hardware_audio, run_64bit, true)
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# Boot control
-SOONG_CONFIG_NAMESPACES += ufsbsg
-SOONG_CONFIG_ufsbsg += ufsframework
-SOONG_CONFIG_ufsbsg_ufsframework := bsg
-
 # Display
 TARGET_SCREEN_DENSITY := 530
 
