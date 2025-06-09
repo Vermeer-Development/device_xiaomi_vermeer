@@ -95,7 +95,6 @@ frpc-adsprpc.ko
 rdbg.ko
 qcom_iommu_debug.ko
 lt9611uxc.ko
-mi_disp_notifier.ko
 zram.ko
 qseecom_proxy.ko
 hwid.ko

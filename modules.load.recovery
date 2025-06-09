@@ -148,7 +148,6 @@ qcom_iommu_util.ko
 iommu-logger.ko
 qcom_iommu_debug.ko
 lt9611uxc.ko
-mi_disp_notifier.ko
 regmap-spmi.ko
 qti-regmap-debugfs.ko
 zram.ko
